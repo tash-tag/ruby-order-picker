@@ -4,7 +4,8 @@ while true
     puts "There are #{group.length} members in the group"
     puts "Press 1) to add a member to the group"
     puts "Press 2) display a random group"
-    puts "Press 3) to quit"
+    puts "Press 3) to select random user"
+    puts "Press 4) to quit"
     #take input from user
     menu_input = gets.chomp.to_i
 
@@ -17,12 +18,17 @@ while true
         puts "Random group output:"
         random_order_loop_running = true
         while random_order_loop_running
-            copied_group = group.clone 
-            while copied_group.length > 0
-                random_index = rand(copied_group.length - 1)
-                puts copied_group[random_index].capitalize
-                copied_group.delete_at(random_index)
+            # copied_group = group.clone 
+            # while copied_group.length > 0
+            #     random_index = rand(copied_group.length - 1)
+            #     puts copied_group[random_index].capitalize
+            #     copied_group.delete_at(random_index)
+            # end 
+            
+            group.shuffle.each do |name| 
+                puts name.capitalize
             end 
+            
             puts "press 1 to go back"
             puts "press 2 to quit"
             puts "press any other key to regenerate order of random group"
@@ -36,8 +42,10 @@ while true
                 sleep(1)
                 system "clear"
             end 
-        end 
+        end
     when 3
+        puts "The random user is #{group.sample.capitalize}" 
+    when 4
         puts "type yes to quit"
         quit_choice = gets.chomp.downcase
         break if quit_choice == 'yes'
