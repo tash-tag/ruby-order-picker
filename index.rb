@@ -23,16 +23,24 @@ while true
                 puts copied_group[random_index].capitalize
                 copied_group.delete_at(random_index)
             end 
-            puts "press 1 to repeat"
+            puts "press 1 to go back"
             puts "press 2 to quit"
+            puts "press any other key to regenerate order of random group"
             choice = gets.chomp.to_i 
-            if choice == 2 
+            if choice == 1 
+                random_order_loop_running = false
+            elsif choice == 2 
+                puts "goodbye"
                 exit
-            end
+            else
+                sleep(1)
+                system "clear"
+            end 
         end 
     when 3
-        #TODO - Check they want to quit
-        break
+        puts "type yes to quit"
+        quit_choice = gets.chomp.downcase
+        break if quit_choice == 'yes'
     else
         puts "Invalid input please try again"
     end
