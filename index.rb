@@ -1,7 +1,7 @@
-group = ["alice"]
+group = ["alice", "brad", "carly", "darryl", "eleanor", "frank", "gertrude"]
 
 while true 
-    puts "There are #{group.length == 1 ? '1 member':  group.length.to_s + 'members'} in the group"
+    puts "There are #{group.length == 1 ? '1 member':  group.length.to_s + ' members'} in the group"
     puts "Press 1) to add a member to the group"
     puts "Press 2) display a random group"
     puts "Press 3) to select random user"
@@ -14,6 +14,7 @@ while true
         puts "Enter name:"
         name = gets.chomp
         group.push(name)
+        puts group
     when 2 
         puts "Random group output:"
         random_order_loop_running = true
