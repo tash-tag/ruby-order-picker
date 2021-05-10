@@ -1,13 +1,10 @@
+require_relative "methods"
 group = ["alice", "brad", "carly", "darryl", "eleanor", "frank", "gertrude"]
 
 while true 
-    puts "There are #{group.length == 1 ? '1 member':  group.length.to_s + ' members'} in the group"
-    puts "Press 1) to add a member to the group"
-    puts "Press 2) display a random group"
-    puts "Press 3) to select random user"
-    puts "Press 4) to quit"
-    #take input from user
-    menu_input = gets.chomp.to_i
+    output_group_size(group.length) 
+    # puts "There are #{group.length == 1 ? '1 member':  group.length.to_s + ' members'} in the group"
+    
 
     case menu_input
     when 1
